@@ -1,5 +1,3 @@
-arguments are not the same as parameters, though many people may have used them interchangeably.
+# Mana Assets
 
-
-
-test remote hook
+Assorted assets exported from Unity, to be used in other projects.
