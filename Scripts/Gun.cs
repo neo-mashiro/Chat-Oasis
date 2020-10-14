@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class Gun : MonoBehaviour {
     private void Update() {
-        // Input.GetMouseButtonDown(0) for single-shot firearms
         if (Input.GetMouseButton(0)) {
-            GameObject bullet = ObjectPool.SharedPool.Fetch();
+            GameObject bullet = ObjectPool.SharedPool.Fetch("Bullet"); 
             if (bullet) {
                 bullet.transform.position = transform.position + transform.up;
                 bullet.SetActive(true);
