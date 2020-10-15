@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // a first person camera, to be attached on the player
-public class FirstPersonCamera : MonoBehaviour {
+public class FPSCamera : MonoBehaviour {
 	[SerializeField] private float sensitivity = 30f;
 	[SerializeField] private float smoothSpeed = 50f;
 
@@ -15,12 +15,12 @@ public class FirstPersonCamera : MonoBehaviour {
 		LockCursor();
 		_player = transform.parent;
 	}
-	
+
 	private void Update() {
 		// horizontal: player rotates around y axis, so does the camera (child)
 		var h = Input.GetAxis("Mouse X") * sensitivity * Time.deltaTime;
 		_player.transform.Rotate(Vector3.up * h);
-		
+
 		// vertical: only the camera rotates
 		var v = Input.GetAxis("Mouse Y") * sensitivity * Time.deltaTime;
 		_xRotation -= v;
@@ -37,7 +37,7 @@ public class FirstPersonCamera : MonoBehaviour {
 		Cursor.visible = false;
 		Cursor.lockState = CursorLockMode.Locked; // lock the cursor within the game view
 	}
-	
+
 	private static void UnlockCursor() {
 		Cursor.visible = true;
 		Cursor.lockState = CursorLockMode.None;

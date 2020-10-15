@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // a simple first person controller script
-public class FirstPersonController : MonoBehaviour {
+public class FPSController : MonoBehaviour {
     [SerializeField] private float jumpForce = 1.1f;
     [SerializeField] private float gravity = 9.81f;
     [SerializeField] private float moveSpeed = 5.0f;
@@ -20,10 +20,10 @@ public class FirstPersonController : MonoBehaviour {
         if (_player.isGrounded) {
             var vecX = Vector3.right * (Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime);
             var vecZ = Vector3.forward * (Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime);
-        
+
             // combine movement in horizontal & vertical directions and convert to world space
             _moveVector = transform.TransformDirection(vecX + vecZ);
-            
+
             if (Input.GetButtonDown("Jump")) {
                 _moveVector.y = jumpForce;
             }
