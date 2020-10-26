@@ -1,4 +1,4 @@
-# Chat Room
+# Chat Oasis
 
 A multiplayer real-time voice chat application, intended to be used in [Mana Oasis](https://github.com/neo-mashiro/Mana-Oasis).
 
